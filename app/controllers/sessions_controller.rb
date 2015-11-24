@@ -11,7 +11,15 @@ class SessionsController < ApplicationController
     else
       #user doesnt exist
       #or pw is incorrect
+      flash[:notice] = "Invalid username or password"
+      redirect_to new_user_path
+
     end
+  end
+
+  def destroy
+    session.clear
+    redirect_to login_path
   end
 
 

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       flash[:notice] = "Invalid username or password"
-      render :new
+      redirect_to new_user_path
     end
   end
 
