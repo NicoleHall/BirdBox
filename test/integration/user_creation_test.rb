@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class UserCreationTest < ActionDispatch::IntegrationTest
-  include Capybara::DSL
+
   test "a user can be created" do
     visit new_user_path
     fill_in "Username", with: "NicoleHall"
@@ -10,4 +10,5 @@ class UserCreationTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("Hello NicoleHall")
   end
+
 end
